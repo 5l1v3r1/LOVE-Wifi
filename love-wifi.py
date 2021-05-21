@@ -3,13 +3,15 @@ import os
 import subprocess
 from subprocess import *
 
-if call(["which","aircrack-ng","xterm","cupp","reaver","pixiewps","bully","wifite","crunch","wordlists"]) == 0:
+if os.system("which aircrack-ng xterm cupp reaver pixiewps bully wifite crunch wordlists >/dev/null 2>&1") == 0:
+
     pass
 
 else:
         print("\nInstalling Needed Tools")
         print("\n")
-        cmd0 = os.system("apt-get install aircrack-ng crunch xterm wordlists reaver pixiewps bully xterm wifite")
+        os.system("apt-get update")
+        cmd0 = os.system("apt-get install aircrack-ng crunch xterm wordlists reaver pixiewps bully xterm wifite cupp")
         cmd  = os.system("sleep 3 && clear")
 def intro():
     cmd  = os.system("clear")
